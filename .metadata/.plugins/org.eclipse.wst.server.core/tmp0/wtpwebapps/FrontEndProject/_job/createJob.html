@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - Post a job</title>
+
+<style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+
+ 
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.container {
+    padding: 16px;
+    width: 60%;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    
+}
+</style>
+</head>
+<body>
+<form>
+<div class="container">
+    <label><b>Job Title</b></label>
+<input type="text" ng-model="job.jobTitle" placeholder="Enter Job Title" required>
+<br>
+
+ <label><b>Job Description</b></label>
+<input type="text" ng-model="job.jobDescription" placeholder="Enter Description here" required>
+<br>
+
+<label><b>Skills Required</b></label>
+<input type="text" ng-model="job.skillsRequired" placeholder="Required skills" required>
+<br>
+
+<label><b>Salary</b></label>
+<input type="text" ng-model="job.salary" placeholder="Salary">
+<br>
+
+<label><b>Location</b></label>
+<input type="text" ng-model="job.location" placeholder="Location">
+<br>
+
+<label><b>Contact To</b></label>
+<input type="email" ng-model="job.email" placeholder="Email">
+<br>
+
+<button type="submit" ng-click="saveJob()" class="btn btn-info">Post Job</button>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - List of Users</title>
+</head>
+<body>
+<br><br><br><br><br><br><br>
+
+<h1>List of Users </h1>
+
+<div class="table-responsive">     
+	<table class="table table-bordered ,table table-striped">
+		<thead >
+		<tr class="info">
+<th>Username</th>
+<th>Email</th>
+<th>Online?</th>
+<th>Role</th>
+<th>Send Request</th>
+
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="u in users">
+<td>{{u.username}}</td>
+<td>{{u.email}}</td>
+<td ng-if="u.online">Yes</td>
+<td ng-if="!u.online">No</td>
+
+<td>{{u.role}}</td>
+<td><a href="" ng-click="friendRequest(u.username)" class="btn btn-info" >Send Friend Request</a></td>
+</tr>
+</tbody>
+</table>`
+</div>
+<a href="#/home" type="button" class="btn btn-primary">Home</a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - BlogList</title>
+</head>
+<body>
+Search :
+<input type="text" ng-model="search.title">
+
+<div class="table-responsive">
+<table class="table">
+
+<tr><th>Recent Posts<th></tr>
+<tr>
+<th>Title</th>
+<th>Created By</th>
+<th>Created On</th>
+<th ng-show="currentUser.role=='ADMIN' || currentUser.username==blogPost.createdBy.username">Edit</th>
+<th ng-show="currentUser.role=='ADMIN' || currentUser.username==blogPost.createdBy.username">DELETE</th>
+
+</tr>
+<tr ng-repeat="blogPost in blogPosts | orderBy:'date':true | filter:search">
+
+<td><a href="#/getBlogDetail/{{blogPost.id}}">{{blogPost.title}}</a></td>
+<td>Created By : {{blogPost.createdBy.username}}</td>
+<td>Created On: {{blogPost.createdOn | date:'MM/dd/yyyy HH:mm'}}</td>
+
+
+
+<td ng-show="currentUser.role=='ADMIN' || currentUser.username==blogPost.createdBy.username"><a href="#/edit/{{blogPost.id}}" >Edit</a></td>
+<td ng-show="currentUser.role=='ADMIN' || currentUser.username==blogPost.createdBy.username"><a href="" ng-click="deleteBlog(blogPost.id)" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></a></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

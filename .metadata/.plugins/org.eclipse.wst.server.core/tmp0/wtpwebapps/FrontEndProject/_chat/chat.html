@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Webminar - Chat</title>
+
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
+	rel="stylesheet" type="text/css" />
+<!-- <link href="_css/style.css" rel="stylesheet" type="text/css" /> -->
+</head>
+<body>
+	<form ng-submit="addMessage()" name="messageForm">
+	   <div class="col-sm-10">
+		<input type="text" placeholder="Type your new message here ..."
+			ng-model="message" class="form-control">
+<!-- 		<div class="info"> -->
+			<span class="count" ng-bind="max - message.length"
+				ng-class="{danger: message.length > max}">300</span>
+			<button ng-disabled="message.length > max || message.length === 0">Send</button>
+<!-- 		</div> -->
+		</div>
+		
+	</form>
+	<hr /><br>
+	<p ng-repeat="message in messages | orderBy:'time':true"
+		class="message">
+		<time>{{message.time | date:'HH:mm'}}</time>
+		<span ng-class="{self: message.self}">{{message.message}}</span>
+	</p>
+
+</body>
+</html>

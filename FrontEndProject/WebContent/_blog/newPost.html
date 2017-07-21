@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - New Blog</title>
+
+<style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+
+ 
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+    width: 60%;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    
+}
+</style>
+</head>
+<body>
+<h1>Post a blog here</h1>
+<form >
+<div class="container">
+    <label><b>Enter the title</b></label>
+    <input type="text" ng-model="blogPost.title" placeholder="Enter the title">
+   <br>
+    <label><b>Content</b></label>
+<textarea class="form-control" rows="10"  ng-model="blogPost.body" placeholder="Content"></textarea>
+<button type="submit" ng-click="submit()" class="btn btn-info"> Post a new Blog</button>
+
+</div>
+</form>
+</body>
+</html>

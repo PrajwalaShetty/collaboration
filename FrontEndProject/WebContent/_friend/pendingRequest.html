@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - Friend Requests</title>
+</head>
+<body>
+<br><br><br><br><br><br><br>
+
+<h1>Pending Requests </h1>
+
+<div class="table-responsive">     
+	<table class="table table-bordered ,table table-striped">
+		<thead >
+		<tr class="info">
+		
+		<th>Friend Request From</th>
+		<th>Accept</th>
+		<th>Deny</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="p in pendingRequest">
+<td>{{p.fromId}}</td>
+<td><a href="" ng-click="updatePendingRequest(p.fromId,'A')" class="btn btn-success">Accept</a></td>
+<td><a href="" ng-click="updatePendingRequest(p.fromId,'D')" class="btn btn-danger">Deny</a></td>
+</tr>
+</tbody>
+
+</table>
+</div>
+
+<a href="#/home" type="button" class="btn btn-primary">Home</a>
+
+</body>
+</html>

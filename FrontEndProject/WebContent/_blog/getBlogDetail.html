@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - Bolg Detail</title>
+</head>
+<body>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div ><strong>{{blogPost.title}}</strong></div>
+            <br>
+            <span><strong>by: </strong>{{blogPost.createdBy.username}}</span>
+            <span><strong>on: </strong>{{blogPost.createdOn | date:'medium'}}</span>
+          
+          </div>
+          <div class="panel-body">
+          {{blogPost.body}}
+          
+          </div>
+<!--           <div> -->
+<!--           Likes: {{blogPost.likes}} -->
+          
+<!--           <br> -->
+<!--           Dislikes: {{blogPost.dislikes}} -->
+<!--           </div> -->
+          </div>
+          </div>
+          <br>
+<!--           <input type="button" value="Like" ng-click="increaseLikes(blogPost)"> -->
+<!--           <input type="button" value="Dislike" ng-click="increaseDislikes(blogPost)"> -->
+          
+          <br>
+<a href="" ng-click="getComments(blogPost.id)" class="btn btn-default">Show Comments</a>
+<ul ng-show="showComments">
+<li ng-repeat="comment in comments" style="list-style: none;">
+<div>
+{{comment.body}}
+ <span><strong>by: </strong>{{comment.createdBy.username}}</span>
+            <span><strong>on: </strong>{{comment.createdOn | date:'medium'}}</span>
+</div>
+</li>
+
+</ul>
+
+</div>
+<div class="row">
+<form>
+<input type="text" ng-model="blogPost.id" hidden="true">
+<div class="col-sm-3 col-md-3 col-lg-2">
+<textarea required ng-model="comment.body"></textarea>
+<button ng-click="addComment()" class="btn btn-primary btn-block">Post Comment</button>
+</div>
+</form>
+</div>
+</body>
+</html>

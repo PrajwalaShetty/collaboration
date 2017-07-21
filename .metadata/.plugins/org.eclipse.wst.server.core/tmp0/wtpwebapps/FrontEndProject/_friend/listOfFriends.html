@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - Friends</title>
+<style type="text/css">
+table {
+    border: 3px solid #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<br><br><br><br><br><br>
+
+
+<h1>My Friends</h1>
+<table class="table table-striped">
+<thead>
+<tr class="info">
+
+<th>Name</th>
+<th>Chat </th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="f in friends">
+<td>{{f.fromId}}</td>
+
+<td><a href="" ng-click="" class="btn btn-warning">chat</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

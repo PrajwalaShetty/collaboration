@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Webminar - Job Detail</title>
+</head>
+<body>
+<div class="table-responsive">     
+	<table class="table table-bordered ,table table-striped">
+		<thead >
+		<tr class="info">
+			<th>Job Id</th>
+			<th>Title</th>
+			<th>Location</th>
+			<th>Description</th>
+			<th>Posted Date</th>
+			<th>Salary</th>
+			<th>Skills Required</th>
+			<th>Contact To</th>
+			<th>Created By</th>
+			<th>Edit</th>
+			<th>DELETE</th>
+			
+			</tr>
+		</thead>
+		<tbody >
+			<tr ng-repeat="job in jobs">
+				<td>{{job.jobId}}</td>
+				<td>{{job.jobTitle}}</td>
+				<td>{{job.location}}</td>
+				<td>{{job.jobDescription}}</td>
+				<td>{{job.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
+				<td>{{job.salary}}</td>
+				<td>{{job.skillsRequired}}</td>
+				<td>{{job.email}}</td>
+				<td>Created By : {{job.createdBy.username}}</td>
+				
+
+			
+<td ng-show="currentUser.role=='ADMIN' || currentUser.username==job.createdBy.username"><a href="#/editJob/{{job.jobId}}" >Edit</a></td>
+<td ng-show="currentUser.role=='ADMIN' || currentUser.username==job.createdBy.username"><a href="" ng-click="deleteJob(job.jobId)" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></a></td>
+			
+				<!--   <a href="#/getJobById/{{job.jobId}}" >{{job.jobTitle}}</a>  -->
+				<!-- <a href=""ng-click="getJobById(job.jobId)" >{{job.jobTitle}}</a> -->
+
+			</tr>
+		</tbody>
+	</table>
+	</div>
+<br><br><br>
+	<a href="#/home" type="button" class="btn btn-info"> Home page</a>
+
+</body>
+</html>
